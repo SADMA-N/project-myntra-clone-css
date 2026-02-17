@@ -1,143 +1,316 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Figtree-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
-header{
+
+header {
     display: flex;
-    background-color: #ffffff;
-    height: 80px;
-    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    min-height: 80px;
+    padding: 0 4%;
+    background-color: #ffffff;
     border-bottom: 1px solid #b6b1b1;
 }
-.myntra_home{
+
+.myntra_home {
     height: 45px;
+    display: block;
 }
-.logo_container{
-    margin-left: 4%;
+
+.logo_container {
+    flex: 0 0 auto;
 }
-.nav_bar{
+
+.nav_bar {
     display: flex;
-    min-width: 515px;
-    justify-content: space-evenly;
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: center;
+    gap: 22px;
 }
-.nav_bar a{
-    /* font-family: Figtree-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; */
+
+.nav_bar a {
     font-size: 14px;
     letter-spacing: .3px;
     color: #282c3f;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 28px 0 ;
+    white-space: nowrap;
+    padding: 28px 0;
     border-bottom: 5px solid #ffffff;
 }
+
 .nav_bar a:hover {
     border-bottom: 4px solid #ff3f6c;
 }
-.nav_bar a sup{
+
+.nav_bar a sup {
     font-size: 10px;
     color: #ff3f6c;
 }
-.search_bar{
+
+.search_bar {
     height: 40px;
-    min-width: 200px;
-    width: 30%;
     display: flex;
     align-items: center;
-    
+    flex: 1 1 340px;
+    min-width: 220px;
+    max-width: 460px;
 }
 
-.search_icon{
+.search_icon {
     height: 20px;
     padding: 10px;
-    box-sizing: content-box ;
+    box-sizing: content-box;
     background-color: #f5f5f6;
     color: #282c3f;
     font-weight: 300;
     border-radius: 4px 0 0 4px;
 }
 
-.search_input{
+.search_input {
     color: #696e79;
     background-color: #f5f5f6;
     flex-grow: 1;
+    min-width: 0;
+    width: 100%;
     height: 40px;
-    border: 0 ;
+    border: 0;
     border-radius: 0 4px 4px 0;
 }
 
-
-
-.action_bar{
-    margin-right: 4%;
+.action_bar {
     display: flex;
-    min-width: 200px;
-    justify-content: space-evenly;
-    /* width: 30%; */
+    gap: 18px;
+    margin-left: auto;
+    min-width: 0;
 }
-.action_container{
+
+.action_container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .banner_container {
     margin: 40px 0;
 }
-.banner_image{
+
+.banner_image {
     width: 100%;
 }
 
-.category_heading{
+.category_heading {
     text-transform: uppercase;
     color: #3e4152;
     letter-spacing: .15em;
     font-size: 1.8em;
-    margin: 50px 0 10px 30px ;
+    margin: 50px 0 10px 30px;
     max-height: 5em;
     font-weight: 700;
 }
 
-.category_items{
+.category_items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.sale_item{
-    width: 250px;
+    justify-content: center;
+    gap: 4px;
 }
 
-.footer_container{
-    padding: 30px 0 40px 0;
+.sale_item {
+    width: min(250px, 44vw);
+    max-width: 100%;
+    display: block;
+}
+
+.footer_container {
+    padding: 30px 4% 40px;
     background: #FAFBFC;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-.footer_column{
+.footer_column {
     display: flex;
     flex-direction: column;
+    flex: 1 1 160px;
+    min-width: 160px;
 }
-.footer_column a{
-    /* font-family: Figtree-Regular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif; */
+
+.footer_column a {
     color: #696b79;
     font-size: 15px;
     text-decoration: none;
     padding-bottom: 5px;
 }
 
-.footer_column h3{
+.footer_column h3 {
     color: #282c3f;
     font-size: 14px;
     margin-bottom: 15px;
 }
 
-.copyright{
+.copyright {
     color: #94969f;
     text-align: end;
     padding: 15px;
+}
+
+@media (max-width: 1200px) {
+    header {
+        gap: 14px;
+    }
+
+    .nav_bar {
+        gap: 14px;
+    }
+
+    .nav_bar a {
+        font-size: 13px;
+    }
+
+    .search_bar {
+        flex-basis: 260px;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap;
+        row-gap: 10px;
+        align-items: flex-start;
+        padding: 10px 4%;
+    }
+
+    .myntra_home {
+        height: 40px;
+    }
+
+    .search_bar {
+        order: 2;
+        min-width: 0;
+        max-width: none;
+        flex: 1 1 calc(100% - 72px);
+    }
+
+    .action_bar {
+        order: 1;
+        margin-left: auto;
+        gap: 10px;
+    }
+
+    .nav_bar {
+        order: 3;
+        width: 100%;
+        flex: 1 0 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 18px;
+        padding-bottom: 6px;
+    }
+
+    .nav_bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav_bar a {
+        padding: 10px 0;
+        border-bottom-width: 3px;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    header {
+        padding: 10px 12px;
+    }
+
+    .nav_bar {
+        overflow-x: visible;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 10px 14px;
+        padding-bottom: 0;
+    }
+
+    .nav_bar a {
+        padding: 6px 0;
+        border-bottom-width: 2px;
+    }
+
+    .search_bar {
+        order: 3;
+        flex: 1 0 100%;
+        width: 100%;
+    }
+
+    .action_name {
+        display: none;
+    }
+
+    .action_bar {
+        gap: 8px;
+    }
+
+    .banner_container {
+        margin: 20px 0;
+    }
+
+    .category_heading {
+        font-size: 1.35em;
+        letter-spacing: .1em;
+        margin: 32px 12px 10px;
+    }
+
+    .sale_item {
+        width: min(220px, 46vw);
+    }
+
+    .footer_container {
+        padding: 24px 12px 30px;
+        gap: 18px;
+    }
+
+    .footer_column {
+        min-width: 130px;
+        flex: 1 1 130px;
+    }
+
+    .copyright {
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav_bar {
+        gap: 14px;
+    }
+
+    .nav_bar a {
+        font-size: 11px;
+    }
+
+    .search_icon {
+        padding: 8px;
+    }
+
+    .search_input {
+        font-size: 13px;
+    }
+
+    .sale_item {
+        width: min(190px, 47vw);
+    }
 }
